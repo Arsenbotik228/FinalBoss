@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.myself223.core.loadImageURL
 import com.myself223.main.databinding.ItemCharactersBinding
 import com.myself223.main.presentation.model.CharacterUi

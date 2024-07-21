@@ -37,6 +37,10 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.compose.ui:ui:1.3.0")
+    implementation ("androidx.compose.material:material:1.3.0")
+    implementation ("androidx.compose.ui:ui-tooling-preview:1.3.0")
+    implementation ("androidx.paging:paging-compose:1.0.0-alpha14")
     implementation(libs.bundles.ui.component)
     implementation(libs.bundles.test.component)
     implementation(libs.bundles.navigaion.component)

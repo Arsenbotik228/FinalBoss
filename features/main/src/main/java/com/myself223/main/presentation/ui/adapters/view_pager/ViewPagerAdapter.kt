@@ -7,11 +7,10 @@ import com.myself223.main.presentation.ui.fragments.episodes.EpisodesFragment
 import com.myself223.main.presentation.ui.fragments.locations.LocationFragment
 
 class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-
     private val fragments = listOf(
         CharactersFragment(),
-        LocationFragment(),
-        EpisodesFragment()
+        EpisodesFragment(),
+        LocationFragment()
     )
 
     override fun getItemCount(): Int = fragments.size

@@ -5,11 +5,39 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.myself223.main.presentation.ui.fragments.characters.CharactersFragment">
+    
+    <com.google.android.material.search.SearchView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:id="@+id/search_view"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_search_view"
+        android:layout_marginRight="80dp"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_search_view"
+        android:layout_marginTop="8dp"
+        android:text="@string/sort"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:id="@+id/btn_search"/>
+
+    
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_characters"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="12dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_characters" />
 
