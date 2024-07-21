@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 
 val uiModule = module {
-    single { CharacterViewModel(get()) }
+    single { CharacterViewModel(get(),get()) }
     single { EpisodesViewModel(get()) }
     single { LocationViewModel(get()) }
 }

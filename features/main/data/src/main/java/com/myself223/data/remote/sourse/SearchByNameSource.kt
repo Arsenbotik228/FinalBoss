@@ -5,11 +5,12 @@ import com.myself223.data.remote.apiservice.ApiService
 import com.myself223.data.remote.dto.characters.CharacterDto
 import com.myself223.domain.model.CharacterModel
 
-class CharacterSource(
+class SearchByNameSource(
     private val apiService: ApiService,
+    name: String,
 
-): BasePagingSource<CharacterDto,CharacterModel>({ page ->
-    apiService.getCharacters(
-        page = page
+    ): BasePagingSource<CharacterDto,CharacterModel>({ name ->
+    apiService.searchCharactersByName(
+        name = name.toString()
     )
 })
