@@ -7,9 +7,9 @@ import com.myself223.domain.usecase.SearchUseCase
 import org.koin.dsl.module
 
 val useCaseModule = module {
-     single{ CharactersUseCase(get()) }
-     single{ SearchUseCase(get()) }
-     single{ EpisodesUseCase(get()) }
-     single{ LocationUseCase(get()) }
+     factory{ SearchUseCase(get()) }
+     factory{ CharactersUseCase(get()) }
+     factory{ EpisodesUseCase(get()) }
+     factory{ LocationUseCase(get()) }
 
 }

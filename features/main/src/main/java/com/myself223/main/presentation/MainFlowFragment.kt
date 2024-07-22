@@ -5,11 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
+import com.myself223.main.R
 import com.myself223.main.databinding.FragmentMainFlowBinding
 import com.myself223.main.presentation.ui.adapters.view_pager.ViewPagerAdapter
 
 class MainFlowFragment : Fragment() {
+
 
     private val binding by lazy {
         FragmentMainFlowBinding.inflate(layoutInflater)

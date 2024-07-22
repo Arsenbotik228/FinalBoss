@@ -1,4 +1,3 @@
-// CharacterDto.kt
 package com.myself223.data.remote.dto.characters
 
 import com.myself223.data.mapper.DataMapper

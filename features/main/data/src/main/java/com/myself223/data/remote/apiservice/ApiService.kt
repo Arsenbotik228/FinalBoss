@@ -12,9 +12,10 @@ interface ApiService {
     suspend fun getCharacters(
         @Query("page") page: Int? = 1,
     ): BaseMainResponse<CharacterDto>
-    @GET("character")
-    suspend fun searchCharactersByName(
-        @Query("name") name: String,
+    @GET("character/")
+    suspend fun getCharactersByName(
+        @Query("name")
+        characterName: String
     ): BaseMainResponse<CharacterDto>
 
     @GET("episode")

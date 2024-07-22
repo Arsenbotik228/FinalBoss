@@ -5,5 +5,5 @@ import com.myself223.domain.model.CharacterModel
 import kotlinx.coroutines.flow.Flow
 
 interface SearchByNameRepository {
-    fun searchByName(name:String): Flow<PagingData<CharacterModel>>
+    fun searchCharactersByName(name: String): Flow<PagingData<CharacterModel>>
 }

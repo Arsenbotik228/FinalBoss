@@ -8,7 +8,7 @@ import com.myself223.main.presentation.module.uiModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class GraduationTestAssignment:Application() {
+class GraduationTestAssignment : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
@@ -16,6 +16,4 @@ class GraduationTestAssignment:Application() {
             modules(networkModule, repoModule, useCaseModule, uiModule)
         }
     }
-
-
 }

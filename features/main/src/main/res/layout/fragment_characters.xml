@@ -12,24 +12,7 @@
     android:layout_height="60dp"
     app:layout_constraintStart_toStartOf="parent"
     android:id="@+id/search_bar"
-    app:layout_constraintEnd_toStartOf="@id/btn_search"
-    android:hint="НАйти"
-    app:queryHint="Найти"/>
-   <!-- <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/search_bar_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_scrollFlags="scroll|enterAlways"
-        android:layout_margin="8dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search Characters"
-            android:imeOptions="actionSearch"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>-->
+    app:layout_constraintEnd_toStartOf="@id/btn_search"/>
     <com.google.android.material.button.MaterialButton
         android:layout_width="60dp"
         android:layout_height="60dp"

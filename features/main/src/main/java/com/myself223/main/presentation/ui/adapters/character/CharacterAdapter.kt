@@ -37,18 +37,15 @@ class CharacterViewHolder(private val binding: ItemCharactersBinding) : Recycler
             "Dead" -> binding.itemStatusColor.setBackgroundColor(Color.RED)
             "unknown" -> binding.itemStatusColor.setBackgroundColor(Color.GRAY)
         }
-
     }
-
 }
 
 class CharacterDiffCallback : DiffUtil.ItemCallback<CharacterUi>() {
     override fun areItemsTheSame(oldItem: CharacterUi, newItem: CharacterUi): Boolean {
-        return oldItem == newItem
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: CharacterUi, newItem: CharacterUi): Boolean {
         return oldItem == newItem
     }
-
 }

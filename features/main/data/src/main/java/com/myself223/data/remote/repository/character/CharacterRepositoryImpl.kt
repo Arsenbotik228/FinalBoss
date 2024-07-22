@@ -7,7 +7,7 @@ import com.myself223.data.remote.sourse.CharacterSource
 import com.myself223.domain.model.CharacterModel
 import com.myself223.domain.repository.character.CharacterRepository
 import kotlinx.coroutines.flow.Flow
-
+import kotlinx.coroutines.flow.flow
 
 
 class CharacterRepositoryImpl(private val api: ApiService) : CharacterRepository {
@@ -16,7 +16,12 @@ class CharacterRepositoryImpl(private val api: ApiService) : CharacterRepository
             CharacterSource(
                 apiService = api
             )
+
         )
+    override fun searchByName(name: String): Flow<List<CharacterModel>> = flow {
+        val response = api.getCharactersByName(name)
+        emit(response.results.map { it.toDomain() })
+    }
 
 
 }

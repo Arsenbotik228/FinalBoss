@@ -10,7 +10,7 @@ class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     private val fragments = listOf(
         CharactersFragment(),
         EpisodesFragment(),
-        LocationFragment()
+        LocationFragment(),
     )
 
     override fun getItemCount(): Int = fragments.size
