@@ -39,12 +39,14 @@ class CharactersFragment : BaseFragment<FragmentCharactersBinding, CharacterView
         })
 
         binding.btnSearch.setOnClickListener {
-            // Показать фрагмент фильтров
             FilterCharacterFragment().show(childFragmentManager, "FilterFragment")
         }
     }
 
     override fun launchObserver() {
+        viewModel.getCharacter().observeUIPaging {character->
+            characterAdapter.submitData(character)
+        }
         lifecycleScope.launch {
             viewModel.characterResults.collectLatest {
                 characterAdapter.submitData(it)

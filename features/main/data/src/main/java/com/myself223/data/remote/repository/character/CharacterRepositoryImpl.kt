@@ -4,7 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.myself223.data.remote.apiservice.ApiService
-import com.myself223.data.remote.sourse.CharacterPagingSource
+import com.myself223.data.remote.sourse.CharacterFiltreSource
 import com.myself223.data.remote.sourse.CharacterSource
 import com.myself223.data.remote.sourse.SearchCharacterByNameSource
 import com.myself223.domain.model.CharacterModel
@@ -34,7 +34,7 @@ class CharacterRepositoryImpl(private val api: ApiService) : CharacterRepository
         return Pager(
             config = PagingConfig(pageSize = 20),
             pagingSourceFactory = {
-                CharacterPagingSource(api, status, species, gender)
+                CharacterFiltreSource(api, status, species, gender)
             }
         ).flow
 

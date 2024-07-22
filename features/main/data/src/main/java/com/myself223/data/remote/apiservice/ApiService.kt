@@ -27,8 +27,18 @@ interface ApiService {
     suspend fun getEpisodes(
         @Query("page") page: Int? = 1,
     ): BaseMainResponse<EpisodesDto>
+    @GET("episode")
+    suspend fun getEpisodesByName(
+        @Query("name") name: String,
+        @Query("page") page: Int
+    ): BaseMainResponse<EpisodesDto>
     @GET("location")
     suspend fun getLocation(
         @Query("page") page: Int? = 1,
+    ): BaseMainResponse<LocationDto>
+    @GET("location")
+    suspend fun getLocationByName(
+        @Query("name") name: String,
+        @Query("page") page: Int
     ): BaseMainResponse<LocationDto>
 }

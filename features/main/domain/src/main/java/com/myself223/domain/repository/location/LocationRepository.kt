@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface LocationRepository {
     fun getAllLocation(): Flow<PagingData<LocationModel>>
+    fun searchLocationByName(name: String): Flow<PagingData<LocationModel>>
+
 }

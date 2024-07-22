@@ -7,4 +7,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface EpisodesRepository {
     fun getAllEpisodes(): Flow<PagingData<EpisodesModel>>
+    fun searchEpisodesByName(name: String): Flow<PagingData<EpisodesModel>>
+
 }
