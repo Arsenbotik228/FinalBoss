@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface CharacterRepository {
     fun getAllCharacters(): Flow<PagingData<CharacterModel>>
-    fun searchByName(name: String): Flow<List<CharacterModel>>
+    fun searchByName(name: String): Flow<PagingData<CharacterModel>>
 }
