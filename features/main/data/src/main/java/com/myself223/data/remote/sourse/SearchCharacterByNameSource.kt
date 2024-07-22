@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.myself223.data.remote.apiservice.ApiService
 import com.myself223.domain.model.CharacterModel
 
-class SearchByNameSource(
+class SearchCharacterByNameSource(
     private val apiService: ApiService,
     private val name: String
 ) : PagingSource<Int, CharacterModel>() {

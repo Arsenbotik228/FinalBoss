@@ -5,9 +5,9 @@ import com.myself223.domain.model.CharacterModel
 import com.myself223.domain.repository.character.CharacterRepository
 import kotlinx.coroutines.flow.Flow
 
-class SearchUseCase(private val repository: CharacterRepository) {
+class SearchCharacterUseCase(private val repository: CharacterRepository) {
 
-    fun searchByName(name: String): Flow<PagingData<CharacterModel>> {
-        return repository.searchByName(name)
+    fun searchCharacterByName(name: String): Flow<PagingData<CharacterModel>> {
+        return repository.searchCharacterByName(name)
     }
 }

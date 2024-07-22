@@ -7,6 +7,7 @@ import com.myself223.core.base.BaseFragment
 import com.myself223.main.R
 import com.myself223.main.databinding.FragmentCharactersBinding
 import com.myself223.main.presentation.ui.adapters.character.CharacterAdapter
+import com.myself223.main.presentation.ui.fragments.FilterCharacterFragment
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -36,12 +37,17 @@ class CharactersFragment : BaseFragment<FragmentCharactersBinding, CharacterView
                 return true
             }
         })
+
+        binding.btnSearch.setOnClickListener {
+            // Показать фрагмент фильтров
+            FilterCharacterFragment().show(childFragmentManager, "FilterFragment")
+        }
     }
 
     override fun launchObserver() {
         lifecycleScope.launch {
-            viewModel.searchResults.collectLatest { pagingData ->
-                characterAdapter.submitData(pagingData)
+            viewModel.characterResults.collectLatest {
+                characterAdapter.submitData(it)
             }
         }
     }
