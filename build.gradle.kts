@@ -5,4 +5,6 @@ plugins {
     alias(libs.plugins.navigation.args) apply false
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.android.library) apply false
+    id("com.google.gms.google-services") version "4.4.2" apply false
+
 }

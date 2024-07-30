@@ -51,8 +51,10 @@ class FilterCharacterFragment : BottomSheetDialogFragment() {
             dismiss()
         }
         binding.btnUnApply.setOnClickListener {
+            characterViewModel.notApplyFilters(species = null, status = null, gender = null)
+                dismiss()
             characterViewModel.resetFilters()
-            dismiss()
+                dismiss()
         }
     }
 

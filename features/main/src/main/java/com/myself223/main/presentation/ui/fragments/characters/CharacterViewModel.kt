@@ -33,11 +33,7 @@ class CharacterViewModel(
 
     private var currentSearchQuery: String? = null
     private var currentFilters: CharacterFilters? = null
-    fun getCharacter(): Flow<PagingData<CharacterUi>> {
-        return charactersUseCase().map { pagingData ->
-            pagingData.map { it.toUi() }
-        }.cachedIn(viewModelScope)
-    }
+
 
     fun searchCharacters(name: String) {
         currentSearchQuery = name
@@ -52,15 +48,30 @@ class CharacterViewModel(
     }
 
     fun applyFilters(status: String?, species: String?, gender: String?) {
-        currentFilters = CharacterFilters(status, species, gender)
+        currentFilters = CharacterFilters(status , species, gender)
         viewModelScope.launch {
-            useCase.filter(status, species, gender)
+            useCase.filter(status , species, gender)
                 .map { pagingData -> pagingData.map { it.toUi() } }
                 .cachedIn(viewModelScope)
                 .collectLatest { pagingData ->
                     _characterResults.value = pagingData
                 }
         }
+    }fun notApplyFilters(status: String?, species: String?, gender: String?) {
+        currentFilters = CharacterFilters(status , species, gender)
+        viewModelScope.launch {
+            useCase.filter(status = null, species=null, gender=null)
+                .map { pagingData -> pagingData.map { it.toUi() } }
+                .cachedIn(viewModelScope)
+                .collectLatest { pagingData ->
+                    _characterResults.value = pagingData
+                }
+        }
+    }
+    fun getCharacter(): Flow<PagingData<CharacterUi>> {
+        return charactersUseCase().map { pagingData ->
+            pagingData.map { it.toUi() }
+        }.cachedIn(viewModelScope)
     }
 
     fun resetFilters() {
@@ -71,6 +82,8 @@ class CharacterViewModel(
             getCharacter()
         }
     }
+
+
 
 
 

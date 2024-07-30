@@ -38,7 +38,6 @@ android {
 dependencies {
     implementation(libs.bundles.ui.component)
     implementation(libs.bundles.koin.component)
-
     implementation(libs.coroutines.core)
     implementation(libs.paging)
     implementation(libs.bundles.test.component)

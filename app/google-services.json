@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "863528616802",
+    "project_id": "testnotification-1de14",
+    "storage_bucket": "testnotification-1de14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863528616802:android:e85c18dd1abb08f99ba23b",
+        "android_client_info": {
+          "package_name": "com.myself223.graduationtestassignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAp56f1VHAj8J3uLthn-fGh_ZTz56VIJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863528616802:android:d53bca8d44bb21b39ba23b",
+        "android_client_info": {
+          "package_name": "com.myself223.notificationproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAp56f1VHAj8J3uLthn-fGh_ZTz56VIJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
